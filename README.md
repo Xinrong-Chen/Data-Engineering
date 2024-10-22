@@ -2,6 +2,7 @@
 
 ### Tech stack
 * Snowflake
+* MySQL, MS SQL Server
 * Spark
 * Kafka
 * Airflow

@@ -1,3 +1,4 @@
+-- originally written in snowflake SQL
 -- retrieve wanted columns
 
 SELECT COLUMN_NAME
@@ -30,7 +31,7 @@ FROM engine.database.DIMDATE;
 
 DESC TABLE DIMDATE_MINE;
 
-// create a temporary table for backup before making changes
+-- create a temporary table for backup before making changes
 
 CREATE OR REPLACE TEMPORARY TABLE TempHistorical AS
     SELECT * FROM DIMDATE_MINE;
@@ -114,7 +115,7 @@ SELECT COUNT(*) AS null_count FROM DIMDATE_MINE WHERE Datekey IS NULL;
 DROP TABLE IF EXISTS TempHistorical;
 
 
-// Cross-validate table from another source with mine;
+-- Cross-validate table from another source with mine;
 SELECT * FROM DIMDATE_OTHER LIMIT 100; 
 
 SHOW COLUMNS IN TABLE DIMDATE_OTHER;
